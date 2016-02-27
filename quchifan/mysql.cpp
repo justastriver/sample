@@ -166,7 +166,7 @@ int Mysql::Affect(mysql_config_t &mysql_config, std::string sql, std::string *er
 				strlen(sqls[i].c_str()))) {
         if (error) {
 	  *error = mysql_error(mysql_data);
-	  cout<<"[ERROR] sql: "<<*error<<endl;
+	  cout<<"[ERROR] sql ("<<i<<"): "<<sqls[i]<<endl;
         }
 
         mysql_close(mysql_data);

@@ -139,6 +139,7 @@ int doTask(vector<vector<string> > &data_base,
     //record[0] = "111111111";//id
     //record[1] = "222222222223";//ordernum
     record[15] = "10";//status change to 10
+    record[30] = "";//remark
     record[32] = parseTime(base_datetime,record[32]);//arrived_at
     record[36] = parseTime(base_datetime,record[36]);//created_at
     record[37] = parseTime(base_datetime,record[37]);//updated_at
