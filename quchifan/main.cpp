@@ -130,6 +130,7 @@ int doTask(vector<vector<string> > &data_base,
   cout<<"[DEBUG] load to hash map, records: "<<base_user_ids.size()<<endl;
 
   vector<string> record;
+  int count = 0;
   for(size_t i = 0;i<data_from_size;++i) {
     record = data_from[i];
     if(base_user_ids.end() != base_user_ids.find(atol(record[2].c_str()))) {
@@ -145,6 +146,11 @@ int doTask(vector<vector<string> > &data_base,
     record[37] = parseTime(base_datetime,record[37]);//updated_at
 
     data_new.push_back(record);
+    count++;
+    if(count == 5000) {
+      cout<<"[DEBUG] more than 5k records, ignore"<<endl;
+      break;
+    }
     //cout<<"[DEBUG] restaurant name : "<<record[4]<<endl;
   }
   if(updateData(data_new)) {
