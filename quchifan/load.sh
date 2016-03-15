@@ -6,4 +6,4 @@
 mysql -uroot -phello1234 -Dquchifan <~/work/jobs/orders-2016-02-26.sql
 
 #step 2, run task to parse and update database
-./task 2016-02-26 2016-02-01
+./task-ex 2016-02-26 2015-12-18 10 0 0
